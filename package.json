@@ -1,0 +1,71 @@
+{
+  "name": "octomailer",
+  "version": "1.0.0",
+  "description": "A universal library for sending emails using different services.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest 2>&1 | grep -v \"watchman warning\" | grep -v \"To clear this warning, run:\" | grep -v \"watchman watch-del\" | grep -v \"watchman watch-project\" | grep -v \"MustScanSubDirs\" | grep -v \"https://facebook.github.io/watchman\"",
+    "test:watch": "jest --watch 2>&1 | grep -v \"watchman warning\" | grep -v \"To clear this warning, run:\" | grep -v \"watchman watch-del\" | grep -v \"watchman watch-project\" | grep -v \"MustScanSubDirs\" | grep -v \"https://facebook.github.io/watchman\"",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts' --fix",
+    "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'"
+  },
+  "keywords": [
+    "email",
+    "mailer",
+    "sendgrid",
+    "brevo",
+    "mailgun",
+    "ses",
+    "postmark",
+    "mandrill",
+    "sparkpost",
+    "infobip",
+    "mailjet",
+    "transactional-email"
+  ],
+  "author": "aaurelions",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.592.0",
+    "@mailchimp/mailchimp_transactional": "^1.0.59",
+    "@sendgrid/mail": "^8.1.3",
+    "axios": "^1.7.2",
+    "form-data": "^4.0.0",
+    "mailgun.js": "^10.2.1",
+    "node-mailjet": "^6.0.5",
+    "nodemailer": "^6.9.13",
+    "postmark": "^4.0.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.4.0",
+    "@types/jest": "^29.5.12",
+    "@types/mailchimp__mailchimp_transactional": "^1.0.11",
+    "@types/node": "^20.14.2",
+    "@types/nodemailer": "^6.4.15",
+    "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.31",
+    "@typescript-eslint/parser": "^8.0.0-alpha.31",
+    "eslint": "^9.4.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "jest": "^30.0.4",
+    "prettier": "^3.3.1",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaurelions/octomailer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aaurelions/octomailer/issues"
+  },
+  "homepage": "https://github.com/aaurelions/octomailer#readme",
+  "overrides": {
+    "glob": "^10.4.5"
+  }
+}

@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log
+
+# OS and IDE files
+.DS_Store
+.idea/
+.vscode/
+
+# Build artifacts
+*.tsbuildinfo
+coverage/
+.jest/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# npm package files
+*.tgz
