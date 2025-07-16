@@ -7,3 +7,4 @@ export * from './mandrill';
 export * from './sparkpost';
 export * from './infobip';
 export * from './mailjet';
+export * from './resend';

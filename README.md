@@ -20,6 +20,7 @@
 
 | Provider       | Free Tier                                    |
 | :------------- | :------------------------------------------- |
+| **Resend**     | 3,000 emails/month (100 emails/day)          |
 | **SendGrid**   | 100 emails/day                               |
 | **Brevo**      | 300 emails/day (9,000 emails/month)          |
 | **Mailgun**    | 100 emails/day                               |
@@ -44,16 +45,16 @@ Here's a simple example of how to use Octomailer with two providers:
 import {
   Octomailer,
   SendGridProvider,
-  BrevoProvider,
+  ResendProvider,
   EmailOptions,
 } from 'octomailer';
 
 // 1. Initialize your chosen providers with their credentials and weights
 const sendgridProvider = new SendGridProvider('YOUR_SENDGRID_API_KEY', 1);
-const brevoProvider = new BrevoProvider('YOUR_BREVO_API_KEY', 3);
+const resendProvider = new ResendProvider('YOUR_RESEND_API_KEY', 3);
 
 // 2. Create an instance of Octomailer with your providers
-const mailer = new Octomailer([sendgridProvider, brevoProvider]);
+const mailer = new Octomailer([sendgridProvider, resendProvider]);
 
 // 3. Define your email
 const email: EmailOptions = {
@@ -74,6 +75,18 @@ mailer
 ## Provider Configuration
 
 Below are the details for configuring each supported provider.
+
+---
+
+### ResendProvider
+
+- **Website**: [resend.com](https://resend.com)
+- **Constructor**: `new ResendProvider(apiKey: string, weight: number)`
+
+```typescript
+import { ResendProvider } from 'octomailer';
+const provider = new ResendProvider('YOUR_RESEND_API_KEY', 1);
+```
 
 ---
 
@@ -137,7 +150,7 @@ const provider = new SESProvider(
 ### PostmarkProvider
 
 - **Website**: [postmarkapp.com](https://postmarkapp.com)
-- **Constructor**: `new PostmarkProvider(serverToken: string, weight: number)`
+-. **Constructor**: `new PostmarkProvider(serverToken: string, weight: number)`
 
 ```typescript
 import { PostmarkProvider } from 'octomailer';
